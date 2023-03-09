@@ -25,6 +25,10 @@
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-user"></i>
                                     </div>
+                                    <div *ngIf="!registerForm.controls['lastName'].valid && 
+                                    (registerForm.controls['lastName'].dirty || registerForm.controls['lastName'].touched)" class="messageError">
+                                        <p class="text-danger">Ce champs est requis</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group mb-3">
@@ -33,6 +37,10 @@
                                     <input type="text" id="firstname" class="form-control" placeholder="Prenoms" formControlName="firstName">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-user"></i>
+                                    </div>
+                                    <div *ngIf="!registerForm.controls['firstName'].valid && 
+                                    (registerForm.controls['firstName'].dirty || registerForm.controls['firstName'].touched)" class="messageError">
+                                        <p class="text-danger">Ce champ est requis</p>
                                     </div>
                                 </div>
                             </div>
@@ -44,6 +52,10 @@
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-hashtag"></i>
                                     </div>
+                                    <div *ngIf="!registerForm.controls['identifier'].valid && 
+                                    (registerForm.controls['identifier'].dirty || registerForm.controls['identifier'].touched)" class="messageError">
+                                        <p class="text-danger">Ce champ est requis</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group mb-3">
@@ -52,6 +64,10 @@
                                     <input type="text" id="email" class="form-control" placeholder="Email" formControlName="email">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-envelope"></i>
+                                    </div>
+                                    <div *ngIf="!registerForm.controls['email'].valid && 
+                                    (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)" class="messageError">
+                                        <p class="text-danger">Ce champ est requis</p>
                                     </div>
                                 </div>
                             </div>
@@ -63,6 +79,10 @@
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-lock"></i>
                                     </div>
+                                    <div *ngIf="!registerForm.controls['password'].valid && 
+                                    (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)" class="messageError">
+                                        <p class="text-danger">Ce champ est requis</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group mb-3">
@@ -72,6 +92,10 @@
                                         placeholder="confirmation du mot de passe" formControlName="confirmPassword">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-lock"></i>
+                                    </div>
+                                    <div *ngIf="!registerForm.controls['confirmPassword'].valid && 
+                                    (registerForm.controls['confirmPassword'].dirty || registerForm.controls['confirmPassword'].touched)" class="messageError">
+                                        <p class="text-danger">Ce champ est requis</p>
                                     </div>
                                     <!-- <div *ngIf="registerForm.get('confirmPassword')?.hasError('passwordsMismatch') && registerForm.get('confirmPassword')?.touched">
                                         Les mots de passe ne correspondent pas.

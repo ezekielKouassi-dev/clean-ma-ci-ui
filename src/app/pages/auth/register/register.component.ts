@@ -22,16 +22,25 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      lastName: '' /*[``, Validators.required, Validators.nullValidator]*/,
-      firstName: '' /*[``, Validators.required, Validators.nullValidator]*/,
-      identifier: '' /*[``, Validators.required, Validators.nullValidator]*/,
-      email: '' /*[``, Validators.required, Validators.email, Validators.nullValidator]*/,
+      lastName: [``, Validators.required],
+      firstName: [``, Validators.required],
+      identifier: [``, Validators.required],
+      email: [``, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)],
       password: [``, Validators.required],
       confirmPassword: [``, Validators.required],
     });
   }
 
   onSubmit() {
+    if(this.formIsValid()) {
+      this.sender();
+    }else {
+      this.notification.createNotification('error', 'formulaire invalide', 'Votre inscription à échoué');
+    }
+    
+  }
+
+  sender() {
     this.httpService.register(this.registerForm.value).subscribe({
       next: (response: any) => {
         if (response.status == 200) {
@@ -48,15 +57,9 @@ export class RegisterComponent implements OnInit {
     console.log(this.registerForm.value);
   }
 
-  // matchingPasswords(passwordKey: string, confirmPasswordKey: string) {
-  //   return (group: FormGroup) => {
-  //     const password = group.controls[passwordKey];
-  //     const confirmPassword = group.controls[confirmPasswordKey];
+  formIsValid() {
+    return this.registerForm.valid;
+  }
 
-  //     if (password.value !== confirmPassword.value) {
-  //       return confirmPassword.setErrors({ mismatchedPasswords: true });
-  //     }
-  //   };
-  // }
 
 }
