@@ -16,8 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { UserModule } from './modules/user.module';
-import { NotificationService } from './services/functions/notifications.service';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 registerLocaleData(fr);
 
@@ -37,6 +38,8 @@ registerLocaleData(fr);
     HttpClientModule,
     BrowserAnimationsModule,
     IconsProviderModule,
+    NzButtonModule,
+    NzSpinModule,
     UserModule
   ],
   providers: [

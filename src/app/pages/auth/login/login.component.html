@@ -17,11 +17,11 @@
                 <div class="card-body">
                     <div class="card-content p-3">
                         <div class="card-title text-uppercase text-center py-3">Connexion</div>
-                        <form>
+                        <form [formGroup]="loginForm" (ngSubmit)="signIn()">
                             <div class="form-group mb-3">
                                 <div class="position-relative has-icon-left">
                                     <label for="identifiant" class="sr-only">Identifiant</label>
-                                    <input type="text" id="identifiant" class="form-control" placeholder="Identifiant">
+                                    <input type="text" id="identifiant" class="form-control" placeholder="Identifiant" formControlName="identifier">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-hashtag"></i>
                                     </div>
@@ -30,7 +30,7 @@
                             <div class="form-group mb-3">
                                 <div class="position-relative has-icon-left">
                                     <label for="password" class="sr-only">mot de passe</label>
-                                    <input type="text" id="password" class="form-control" placeholder="mot de passe">
+                                    <input type="text" id="password" class="form-control" placeholder="mot de passe" formControlName="password">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-lock"></i>
                                     </div>
@@ -50,7 +50,8 @@
                             <div class="row">
                                 <div class="col-12">
                                     <button type="button"
-                                        class="btn gradient-dusk btn-block waves-effect waves-light text-white col-12"
+                                        class="btn gradient-dusk btn-block waves-effect waves-light text-white col-12" nz-button
+                                        [nzLoading]="isLoading"
                                         (click)="signIn()">Connexion</button>
                                 </div>
                             </div>

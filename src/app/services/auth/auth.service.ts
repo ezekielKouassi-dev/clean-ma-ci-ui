@@ -12,4 +12,8 @@ export class HttpService {
     register(user : IUser) {
         return this.authService.post({endpoint : url_path.AUTH_REGISTER, data : user});
     }
+
+    login(user : IUser) {
+        return this.authService.post({endpoint : url_path.AUTH_LOGIN, data : user});
+    }
 }
