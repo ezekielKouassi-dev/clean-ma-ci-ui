@@ -1,0 +1,83 @@
+<div id="wrapper">
+    <div class="card-authentication mx-auto my-5">
+        <div class="card-group">
+            <div class="card mb-0">
+                <div class="bg-signin"></div>
+                <div class="card-img-overlay rounded-left my-5">
+                    <h2 class="text-white">Bienvenue</h2>
+                    <h1 class="text-white">Clean ma ci</h1>
+                    <p class="card-text text-white pt-3">Clean ma ci est une plateforme qui vous permet de gagner de
+                        l'argent
+                        tout en participant à la protection de l'environnement de la côte d'ivoire.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mb-0">
+                <div class="card-body">
+                    <div class="card-content p-3">
+                        <div class="card-title text-uppercase text-center py-3">Connexion</div>
+                        <form>
+                            <div class="form-group mb-3">
+                                <div class="position-relative has-icon-left">
+                                    <label for="identifiant" class="sr-only">Identifiant</label>
+                                    <input type="text" id="identifiant" class="form-control" placeholder="Identifiant">
+                                    <div class="form-control-position">
+                                        <i aria-hidden="true" class="fa fa-hashtag"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <div class="position-relative has-icon-left">
+                                    <label for="password" class="sr-only">mot de passe</label>
+                                    <input type="text" id="password" class="form-control" placeholder="mot de passe">
+                                    <div class="form-control-position">
+                                        <i aria-hidden="true" class="fa fa-lock"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mr-0 ml-0 mb-3">
+                                <div class="form-group col-6">
+                                    <div class="icheck-material-primary">
+                                        <input type="checkbox" id="user-checkbox" checked="" />
+                                        <label for="user-checkbox">Se souvenir?</label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-6 text-end">
+                                    <a href="#">Réinitialiser son mot de passe</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button"
+                                        class="btn gradient-dusk btn-block waves-effect waves-light text-white col-12"
+                                        (click)="signIn()">Connexion</button>
+                                </div>
+                            </div>
+
+                            <div class="text-center pt-3">
+                                <p>connectez-vous avec</p>
+
+                                <div class="row mt-4">
+                                    <div class="form-group mb-0 col-6">
+                                        <button type="button" class="btn btn-outline-dark text-dark btn-block"><i
+                                                class="fa fa-facebook-square"></i> Facebook</button>
+                                    </div>
+                                    <div class="form-group mb-0 col-6 text-right">
+                                        <button type="button" class="btn btn-outline-secondary text-dark btn-block"><i
+                                                class="fa fa-twitter-square"></i> Twitter</button>
+                                    </div>
+                                </div>
+
+                                <hr>
+                                <p class="text-dark">Vous n'avez pas de compte? <a routerLink="/register">ici</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div><!--wrapper-->

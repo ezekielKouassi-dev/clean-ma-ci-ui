@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+.gradient-meridian {
+    background: #283c86;
+    background: -webkit-linear-gradient(45deg, #283c86, #45a247)!important;
+    background: linear-gradient(45deg, #283c86, #45a247)!important;
+}
+
+.gradient-forest {
+    background: #000428;
+    background: -webkit-linear-gradient(45deg, #000428, #004e92)!important;
+    background: linear-gradient(45deg, #000428, #004e92)!important;
+}
+
+.gradient-dusk {
+    background: #2c3e50;
+    background: -webkit-linear-gradient(45deg, #2c3e50, #fd746c)!important;
+    background: linear-gradient(45deg, #2c3e50, #fd746c)!important;
+}
