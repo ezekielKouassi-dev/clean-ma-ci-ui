@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { UserModule } from './modules/user.module';
+import { NotificationService } from './services/functions/notifications.service';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 registerLocaleData(fr);
 
@@ -38,7 +40,8 @@ registerLocaleData(fr);
     UserModule
   ],
   providers: [
-    { provide: NZ_I18N, useValue: fr_FR }
+    { provide: NZ_I18N, useValue: fr_FR },
+    NzNotificationService
   ],
   bootstrap: [AppComponent]
 })

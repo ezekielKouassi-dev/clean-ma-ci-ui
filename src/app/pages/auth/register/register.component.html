@@ -7,7 +7,8 @@
                 <div class="card-img-overlay rounded-left my-5">
                     <h2 class="text-white">Bienvenue</h2>
                     <h1 class="text-white">Clean ma ci</h1>
-                    <p class="card-text text-white pt-3">Clean ma ci est une plateforme qui vous permet de gagner de l'argent
+                    <p class="card-text text-white pt-3">Clean ma ci est une plateforme qui vous permet de gagner de
+                        l'argent
                         tout en participant à la protection de l'environnement de la côte d'ivoire.</p>
                 </div>
             </div>
@@ -16,11 +17,11 @@
                 <div class="card-body">
                     <div class="card-content p-3">
                         <div class="card-title text-uppercase text-center py-3">Inscription</div>
-                        <form>
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                             <div class="form-group mb-3">
                                 <div class="position-relative has-icon-left">
-                                    <label for="exampleInputName" class="sr-only">Nom</label>
-                                    <input type="text" id="exampleInputName" class="form-control" placeholder="Nom">
+                                    <label for="lastname" class="sr-only">Nom</label>
+                                    <input type="text" id="lastname" class="form-control" placeholder="Nom" formControlName="lastName">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-user"></i>
                                     </div>
@@ -28,8 +29,8 @@
                             </div>
                             <div class="form-group mb-3">
                                 <div class="position-relative has-icon-left">
-                                    <label for="exampleInputName" class="sr-only">Prenoms</label>
-                                    <input type="text" id="exampleInputName" class="form-control" placeholder="Prenoms">
+                                    <label for="firstname" class="sr-only">Prenoms</label>
+                                    <input type="text" id="firstname" class="form-control" placeholder="Prenoms" formControlName="firstName">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-user"></i>
                                     </div>
@@ -37,8 +38,9 @@
                             </div>
                             <div class="form-group mb-3">
                                 <div class="position-relative has-icon-left">
-                                    <label for="exampleInputName" class="sr-only">Identifiant</label>
-                                    <input type="text" id="exampleInputName" class="form-control" placeholder="Identifiant">
+                                    <label for="identifier" class="sr-only">Identifiant</label>
+                                    <input type="text" id="identifier" class="form-control"
+                                        placeholder="Identifiant" formControlName="identifier">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-hashtag"></i>
                                     </div>
@@ -46,8 +48,8 @@
                             </div>
                             <div class="form-group mb-3">
                                 <div class="position-relative has-icon-left">
-                                    <label for="exampleInputName" class="sr-only">email</label>
-                                    <input type="text" id="exampleInputName" class="form-control" placeholder="Email">
+                                    <label for="email" class="sr-only">email</label>
+                                    <input type="text" id="email" class="form-control" placeholder="Email" formControlName="email">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-envelope"></i>
                                     </div>
@@ -55,8 +57,9 @@
                             </div>
                             <div class="form-group mb-3">
                                 <div class="position-relative has-icon-left">
-                                    <label for="exampleInputName" class="sr-only">password</label>
-                                    <input type="text" id="exampleInputName" class="form-control" placeholder="password">
+                                    <label for="password" class="sr-only">password</label>
+                                    <input type="password" id="password" class="form-control"
+                                        placeholder="password" formControlName="password">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-lock"></i>
                                     </div>
@@ -64,11 +67,16 @@
                             </div>
                             <div class="form-group mb-3">
                                 <div class="position-relative has-icon-left">
-                                    <label for="exampleInputName" class="sr-only">Confirmez</label>
-                                    <input type="text" id="exampleInputName" class="form-control" placeholder="confirmation du mot de passe">
+                                    <label for="confirmpassword" class="sr-only">Confirmez</label>
+                                    <input type="password" id="confirmpassword" class="form-control"
+                                        placeholder="confirmation du mot de passe" formControlName="confirmPassword">
                                     <div class="form-control-position">
                                         <i aria-hidden="true" class="fa fa-lock"></i>
                                     </div>
+                                    <!-- <div *ngIf="registerForm.get('confirmPassword')?.hasError('passwordsMismatch') && registerForm.get('confirmPassword')?.touched">
+                                        Les mots de passe ne correspondent pas.
+                                    </div> -->
+                                      
                                 </div>
                             </div>
                             <div class="form-group">
@@ -79,10 +87,11 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <button type="button" class="btn gradient-dusk btn-block waves-effect waves-light text-white col-12">Inscription</button>
+                                    <button type="submit"
+                                        class="btn gradient-dusk btn-block waves-effect waves-light text-white col-12">Inscription</button>
                                 </div>
                             </div>
-                            
+
                             <div class="text-center pt-3">
                                 <hr>
                                 <p class="text-dark">Avez vous déjà un compte? <a routerLink="/login">
