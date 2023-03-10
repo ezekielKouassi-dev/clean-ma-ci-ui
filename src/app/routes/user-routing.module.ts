@@ -17,7 +17,7 @@ const routes:Routes = [
             },
             {
                 path : 'assignments',
-                component : TableAssignmentsComponent
+                component : AssignmentsComponent
             },
             {
                 path : 'time-line',
