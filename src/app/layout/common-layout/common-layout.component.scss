@@ -15,6 +15,22 @@ nz-sider {
   left: 0;
 }
 
+/* styles below is form manage side bar item state : the color */
+
+.ant-menu-item  :hover {
+  color: #f96868!important;
+}
+
+.ant-menu-item-selected {
+  background-color: #f96868!important;
+  color: #ffffff!important;
+}
+.ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+  color: #ffffff!important;
+}
+
+/* end */
+
 .right-layout {
   margin-left: 200px;
 }

@@ -1,7 +1,7 @@
 <nz-layout class="layout">
-  <nz-sider>
+  <nz-sider nzTheme="light">
     <div class="logo"></div>
-    <ul nz-menu nzTheme="dark" nzMode="inline">
+    <ul class="gradient-ohhappiness" nz-menu nzMode="inline">
       <li nz-menu-item>
         <span nz-icon="user" nzType="file"></span>
         <span> <a routerLink="/userPlateform/time-line">Time line</a> </span>
@@ -25,7 +25,17 @@
     </ul>
   </nz-sider>
   <nz-layout class="right-layout">
-    <nz-header></nz-header>
+    <nz-header>
+      <div class="header-container">
+        <div class="row">
+          <div class="col-md-10"></div>
+          <div class="col-md-2">
+            <nz-avatar nzIcon="user" nzSrc="https://avatars.githubusercontent.com/u/121268728?v=4"></nz-avatar>
+            Ezekiel Kouassi
+          </div>
+        </div>
+      </div>
+    </nz-header>
     <nz-content>
       <div class="inner-content">
         <router-outlet></router-outlet>

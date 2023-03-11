@@ -10,6 +10,10 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { AssignmentsComponent } from "../components/shared/assignments/assignments.component";
 import { TimeLineComponent } from "../components/time-line/time-line.component";
 import { TableAssignmentsComponent } from "../components/table-assignments/table-assignments.component";
+import { DataTablesModule } from 'angular-datatables';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @NgModule({
     declarations: [
@@ -25,7 +29,11 @@ import { TableAssignmentsComponent } from "../components/table-assignments/table
         NzLayoutModule,
         NzMenuModule,
         NzTimelineModule,
-        NzTableModule
+        NzTableModule,
+        DataTablesModule,
+        NzButtonModule,
+        NzIconModule,
+        NzAvatarModule
     ],
     exports: [
         CommonLayoutComponent, 
