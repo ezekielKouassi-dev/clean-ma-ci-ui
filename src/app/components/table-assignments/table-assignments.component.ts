@@ -28,6 +28,7 @@ export class TableAssignmentsComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
   assignments: any;
+  selectedRow : any;
 
   constructor(private userConsumer: UserConsumerService, private http : HttpClient) { }
 
@@ -49,6 +50,11 @@ export class TableAssignmentsComponent implements OnInit {
         console.log(err);
       }
     })
+  }
+
+  selectRow(row : any) {
+    this.selectedRow = row;
+    console.log(this.selectedRow);
   }
 
 }
