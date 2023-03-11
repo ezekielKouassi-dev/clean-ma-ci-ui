@@ -21,3 +21,38 @@
     background: -webkit-linear-gradient(45deg, #fc4a1a, #f7b733)!important;
     background: linear-gradient(45deg, #fc4a1a, #f7b733)!important;
 }
+
+thead {
+    background-color: #f96868;
+    color: #fff;
+  }
+  
+  /* Style pour la table */
+  table.dataTable {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Style pour les en-têtes de colonne */
+  table.dataTable th {
+    background-color: #f96868;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Style pour les cellules de la table */
+  table.dataTable td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Style pour les lignes de la table */
+  table.dataTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .custom-datatable {
+    border: 1px solid #ccc;
+  }

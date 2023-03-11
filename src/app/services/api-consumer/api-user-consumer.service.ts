@@ -13,7 +13,7 @@ export class UserConsumerService {
         private storage : StorageService) {}
 
     getListOfAssignment() {
-        return this.userService.get(url_path.ASSIGNMENT_LIST);
+        return this.userService.get(`${url_path.ASSIGNMENT_LIST}/${this.getUserId()}`);
     }
 
     acceptAssignment(assignmentId : number) {

@@ -1,7 +1,7 @@
 <h1>Liste des travaux disponible</h1>
 
 <div class="table-responsive">
-  <table datatable [dtOptions]="dtOptions" class="table table-bordered datatable row-border hover mt-3">
+  <table id="datatableAssignments" datatable [dtOptions]="dtOptions" class="table table-bordered datatable custom-datatable row-border hover mt-3">
     <thead>
       <tr>
         <th>Titre</th>
@@ -14,8 +14,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let assignment of assignments">
-        <td>{{ assignment.title }}</td>
-        <td>{{ assignment.description }}</td>
+        <td>{{ assignment.assignmentTitle }}</td>
+        <td>{{ assignment.assignmentDescription }}</td>
         <td>{{ assignment.numberOfAdherent }}</td>
         <td>{{ assignment.numberOfAcceptation }}</td>
         <td>{{ assignment.reward }} XOF</td>

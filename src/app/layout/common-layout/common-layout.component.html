@@ -1,7 +1,7 @@
 <nz-layout class="layout">
   <nz-sider nzTheme="light">
     <div class="logo"></div>
-    <ul class="gradient-ohhappiness" nz-menu nzMode="inline">
+    <ul class="gradient-ohhappiness" nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li *ngIf="userInfo.role == 'USER'" nz-menu-item>
         <span nz-icon="user" nzType="file"></span>
         <span> <a routerLink="/userPlateform/time-line">Time line</a> </span>
@@ -28,7 +28,14 @@
     <nz-header>
       <div class="header-container">
         <div class="row">
-          <div class="col-md-10"></div>
+          <div class="col-md-10">
+            <span
+            class="trigger"
+            nz-icon
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            (click)="isCollapsed = !isCollapsed"
+          ></span>
+          </div>
           <div class="col-md-2">
             <nz-avatar nzIcon="user" nzSrc="https://avatars.githubusercontent.com/u/121268728?v=4"></nz-avatar>
             Ezekiel Kouassi
