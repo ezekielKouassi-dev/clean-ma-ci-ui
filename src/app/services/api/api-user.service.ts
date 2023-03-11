@@ -18,6 +18,10 @@ export class UserService {
         return this.http.post(`${environnment.BASE_URL}${parameter.endPoint}`, parameter.data, { headers: this.headerHttp() });
     }
 
+    patch(parameter: Required<{ endPoint: string, data: any }>) {
+        return this.http.patch(`${environnment.BASE_URL}${parameter.endPoint}`, parameter.data, {headers: this.headerHttp()});
+    }
+
     headerHttp() {
         return new HttpHeaders({
             'Content-Type': 'application/json',

@@ -15,6 +15,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { TableAssignmentsInProgressComponent } from '../components/table-assignments-in-progress/table-assignments-in-progress.component';
+import { TableAssignmentsLeaveComponent } from '../components/table-assignments-leave/table-assignments-leave.component';
+import { BadgeComponent } from '../components/shared/badge/badge.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +25,9 @@ import { TableAssignmentsInProgressComponent } from '../components/table-assignm
         AssignmentsComponent,
         TimeLineComponent,
         TableAssignmentsComponent,
-        TableAssignmentsInProgressComponent
+        TableAssignmentsInProgressComponent,
+        TableAssignmentsLeaveComponent,
+        BadgeComponent
     ],
     imports: [
         CommonModule,

@@ -20,11 +20,14 @@ export class UserConsumerService {
         return this.userService.post({endPoint : `api/v1/users/${this.getUserId()}/assignments/${assignmentId}`, data : null})
     }
 
-    getListOfUserAssignmentsInProgress() {
-        return this.userService.get(`api/v1/assignmentUser/${this.getUserId()}/in progress`);
+    getListOfUserAssignments(state : string) {
+        return this.userService.get(`api/v1/assignmentUser/${this.getUserId()}/${state}`);
     }
 
-    
+
+    leaveAssignment(assignmentId : number) {
+        return this.userService.patch({endPoint:`api/v1/users/${this.getUserId()}/assignments/${assignmentId}`, data: null});
+    }
 
 
 

@@ -1,19 +1,17 @@
-<h1>Liste des travaux en cours</h1>
+<h1>Liste des travaux abandonné</h1>
 <table datatable [dtOptions]="dtOptions" class="table table-bordered datatable row-border hover">
   <thead>
     <tr>
       <th>Titre</th>
       <th>Description</th>
       <th>État</th>
-      <th>Action</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let assignment of assignments">
       <td>{{ assignment.assignmentTitle }}</td>
       <td>{{ assignment.assignmentDescription }}</td>
-      <td><app-badge title="en cours"></app-badge></td>
-      <td><button nz-button nzType="dashed" nzDanger (click)="leave(assignment)"> <span nz-icon nzType="check-circle" nzTheme="outline"></span> Abondonné</button></td>
+      <td><app-badge title="abandonné"></app-badge></td>
     </tr>
   </tbody>
 </table>

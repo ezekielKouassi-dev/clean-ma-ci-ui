@@ -1,23 +1,27 @@
 <h1>Liste des travaux disponible</h1>
-<table datatable [dtOptions]="dtOptions" class="table table-bordered datatable row-border hover">
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Description</th>
-      <th>nombre de personnes requis</th>
-      <th>Personnes ayant adhéré</th>
-      <th>Recompense</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let assignment of assignments">
-      <td>{{ assignment.title }}</td>
-      <td>{{ assignment.description }}</td>
-      <td>{{ assignment.numberOfAdherent }}</td>
-      <td>{{ assignment.numberOfAcceptation }}</td>
-      <td>{{ assignment.reward }} XOF</td>
-      <td><button nz-button nzType="dashed" nzDanger (click)="accept(assignment)"> <span nz-icon nzType="check-circle" nzTheme="outline"></span> Accepter</button></td>
-    </tr>
-  </tbody>
-</table>
+
+<div class="table-responsive">
+  <table datatable [dtOptions]="dtOptions" class="table table-bordered datatable row-border hover mt-3">
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>nombre de personnes requis</th>
+        <th>Personnes ayant adhéré</th>
+        <th>Recompense</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let assignment of assignments">
+        <td>{{ assignment.title }}</td>
+        <td>{{ assignment.description }}</td>
+        <td>{{ assignment.numberOfAdherent }}</td>
+        <td>{{ assignment.numberOfAcceptation }}</td>
+        <td>{{ assignment.reward }} XOF</td>
+        <td><button nz-button nzType="dashed" nzDanger (click)="accept(assignment)"> <span nz-icon nzType="check-circle"
+              nzTheme="outline"></span> Accepter</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

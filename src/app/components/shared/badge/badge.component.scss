@@ -1,0 +1,31 @@
+.shadow-warning {
+    box-shadow: 3px 5px 20px #fba540 !important;
+}
+
+.badge-warning {
+    color: #fff;
+    background-color: #fba540;
+}
+
+.badge-pill {
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+    border-radius: 10rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+}
+
+.m-1 {
+    margin: 0.25rem !important;
+}
