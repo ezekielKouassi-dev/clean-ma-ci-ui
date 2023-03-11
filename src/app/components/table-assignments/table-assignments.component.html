@@ -17,7 +17,7 @@
       <td>{{ assignment.numberOfAdherent }}</td>
       <td>{{ assignment.numberOfAcceptation }}</td>
       <td>{{ assignment.reward }} XOF</td>
-      <td><button nz-button nzType="dashed" nzDanger (click)="selectRow(assignment)"> <span nz-icon nzType="check-circle" nzTheme="outline"></span> Accepter</button></td>
+      <td><button nz-button nzType="dashed" nzDanger (click)="accept(assignment)"> <span nz-icon nzType="check-circle" nzTheme="outline"></span> Accepter</button></td>
     </tr>
   </tbody>
 </table>

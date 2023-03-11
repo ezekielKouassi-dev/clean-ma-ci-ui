@@ -2,23 +2,23 @@
   <nz-sider nzTheme="light">
     <div class="logo"></div>
     <ul class="gradient-ohhappiness" nz-menu nzMode="inline">
-      <li nz-menu-item>
+      <li *ngIf="userInfo.role == 'USER'" nz-menu-item>
         <span nz-icon="user" nzType="file"></span>
         <span> <a routerLink="/userPlateform/time-line">Time line</a> </span>
       </li>
-      <li nz-menu-item>
+      <li *ngIf="userInfo.role == 'USER'" nz-menu-item>
         <span nz-icon="user" nzType="file"></span>
         <span><a routerLink="/userPlateform/assignments">Travaux disponibles</a></span>
       </li>
-      <li nz-menu-item>
+      <li *ngIf="userInfo.role == 'USER' " nz-menu-item>
         <span nz-icon nzType="bar-chart"></span>
-        <span>Travaux en cours</span>
+        <span><a routerLink="/userPlateform/assignmentsInProgress"></a> Travaux en cours</span>
       </li>
-      <li nz-menu-item>
+      <li *ngIf="userInfo.role == 'USER'" nz-menu-item>
         <span nz-icon nzType="video-camera"></span>
         <span>Travaux accomplis</span>
       </li>
-      <li nz-menu-item>
+      <li *ngIf="userInfo.role == 'USER'" nz-menu-item>
         <span nz-icon nzType="upload"></span>
         <span>Travaux abandonnée</span>
       </li>

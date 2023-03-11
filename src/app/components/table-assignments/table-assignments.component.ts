@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { Subject } from 'rxjs';
 import { UserConsumerService } from 'src/app/services/api-consumer/api-user-consumer.service';
+import { NotificationService } from 'src/app/services/functions/notifications.service';
 
 interface DataItem {
   name: string;
@@ -30,14 +31,17 @@ export class TableAssignmentsComponent implements OnInit {
   assignments: any;
   selectedRow : any;
 
-  constructor(private userConsumer: UserConsumerService, private http : HttpClient) { }
+  constructor(private userConsumer: UserConsumerService, private notification : NotificationService) { }
 
   ngOnInit(): void {
     this.dtOptions= {
       pagingType: 'full_number',
       pageLength : 10,
       paging : false,
-      processing: true
+      processing: true,
+      autoWidth: true,
+      serverSide: false,
+      responsive: true
     }
 
     this.userConsumer.getListOfAssignment().subscribe({
@@ -52,9 +56,22 @@ export class TableAssignmentsComponent implements OnInit {
     })
   }
 
-  selectRow(row : any) {
+  accept(row : any) {
     this.selectedRow = row;
     console.log(this.selectedRow);
+    this.userConsumer.acceptAssignment(this.selectedRow.assignmentId).subscribe({
+      next: (response : any) => {
+        console.log(response);
+        if(response.status == 200) {
+          this.notification.createNotification('success', 'Mission accepté', response.message);
+        } else {
+          this.notification.createNotification('danger', 'Echec', response.message);
+        }
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    });
   }
 
 }

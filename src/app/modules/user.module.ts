@@ -14,6 +14,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { TableAssignmentsInProgressComponent } from '../components/table-assignments-in-progress/table-assignments-in-progress.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
         SideBarComponent,
         AssignmentsComponent,
         TimeLineComponent,
-        TableAssignmentsComponent
+        TableAssignmentsComponent,
+        TableAssignmentsInProgressComponent
     ],
     imports: [
         CommonModule,

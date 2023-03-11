@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/auth/auth.service';
 import { NotificationService } from 'src/app/services/functions/notifications.service';
+import { StorageService } from 'src/app/services/storage/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private httpService: HttpService,
     private route: Router,
-    private notification: NotificationService) { }
+    private notification: NotificationService,
+    private storage : StorageService) { }
 
 
   ngOnInit(): void {
@@ -53,7 +55,8 @@ export class LoginComponent implements OnInit {
         console.log(response);
         if (response.status == 200) {
           this.notification.createNotification('success', 'Authentification réussite', 'Vos identifiants sont correcte');
-          setTimeout(() => { this.route.navigate(['/userPlateform']) }, 3000)
+          this.userStorage(response);
+          setTimeout(() => { this.route.navigate(['/userPlateform']) }, 3000);
         } else {
           this.notification.createNotification('error', 'échec de connexion', 'identifiant incorrecte');
         }
@@ -63,6 +66,10 @@ export class LoginComponent implements OnInit {
       }
     });
     console.log(this.loginForm.value);
+  }
+
+  userStorage(userInfo : any) {
+    this.storage.set({key: 'userInfo', value: JSON.stringify(userInfo)});
   }
 
 }

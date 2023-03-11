@@ -20,6 +20,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { UserConsumerService } from './services/api-consumer/api-user-consumer.service';
+import { StorageService } from './services/storage/storage.service';
 
 
 
@@ -48,7 +49,8 @@ registerLocaleData(fr);
   providers: [
     { provide: NZ_I18N, useValue: fr_FR },
     NzNotificationService,
-    UserConsumerService
+    UserConsumerService,
+    StorageService
   ],
   bootstrap: [AppComponent]
 })
