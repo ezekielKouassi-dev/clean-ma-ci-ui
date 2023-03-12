@@ -23,6 +23,10 @@ import { PointOfDropManagementComponent } from '../pages/admin-pages/point-of-dr
 import { ProcessingSocietyManagementComponent } from '../pages/admin-pages/processing-society-management/processing-society-management.component';
 import { RanksManagementComponent } from '../pages/admin-pages/ranks-management/ranks-management.component';
 import { WorkManagementComponent } from '../pages/society-pages/work-management/work-management.component';
+import { RegisterSocietyComponent } from '../components/register-society/register-society.component';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -38,10 +42,12 @@ import { WorkManagementComponent } from '../pages/society-pages/work-management/
         PointOfDropManagementComponent,
         ProcessingSocietyManagementComponent,
         RanksManagementComponent,
-        WorkManagementComponent
+        WorkManagementComponent,
+        RegisterSocietyComponent
     ],
     imports: [
         CommonModule,
+        ReactiveFormsModule,
         UserRoutingModule, 
         NzLayoutModule,
         NzMenuModule,
@@ -51,11 +57,15 @@ import { WorkManagementComponent } from '../pages/society-pages/work-management/
         NzButtonModule,
         NzIconModule,
         NzAvatarModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        NzFormModule
     ],
     exports: [
         CommonLayoutComponent, 
         TimeLineComponent,
+    ],
+    providers: [
+        NzModalService
     ]
 })
 export class UserModule {

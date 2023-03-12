@@ -1,0 +1,26 @@
+<form [formGroup]="form">
+    <div class="form-group mb-3">
+        <input type="text" class="form-control" id="input-1" placeholder="Nom de la société de traitement" formControlName="processingCompanyName">
+    </div>
+    <div class="form-group mb-3">
+        <input type="text" class="form-control" id="input-2" placeholder="Email" formControlName="processingCompanyEmail">
+    </div>
+    <div class="form-group mb-3">
+        <input type="text" class="form-control" id="input-3" placeholder="Téléphone" formControlName="processingCompanyPhone">
+    </div>
+    <div class="form-group mb-3">
+        <input type="text" class="form-control" id="input-4" placeholder="Identifiant" formControlName="processingCompanyIdentifier">
+    </div>
+    <div class="form-group mb-3">
+        <input type="password" class="form-control" id="input-5" placeholder="Mot de passe" formControlName="processingCompanyPassword">
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6">
+                <button class="m-2" nz-button nzType="primary" nzDanger (click)="close()">Annuler</button>
+                <button class="m-2" nz-button nzType="default" nzDanger (click)="createProcessingCompany()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+</form>
