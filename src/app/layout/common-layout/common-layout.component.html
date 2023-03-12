@@ -2,26 +2,54 @@
   <nz-sider nzTheme="light">
     <div class="logo"></div>
     <ul class="gradient-ohhappiness" nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li *ngIf="userInfo.role == 'USER'" nz-menu-item>
-        <span nz-icon="user" nzType="file"></span>
-        <span> <a routerLink="/userPlateform/time-line">Time line</a> </span>
-      </li>
-      <li *ngIf="userInfo.role == 'USER'" nz-menu-item>
-        <span nz-icon="user" nzType="file"></span>
-        <span><a routerLink="/userPlateform/assignments">Travaux disponibles</a></span>
-      </li>
-      <li *ngIf="userInfo.role == 'USER' " nz-menu-item>
-        <span nz-icon nzType="bar-chart"></span>
-        <span><a routerLink="/userPlateform/assignmentsInProgress"></a> Travaux en cours</span>
-      </li>
-      <li *ngIf="userInfo.role == 'USER'" nz-menu-item>
-        <span nz-icon nzType="video-camera"></span>
-        <span>Travaux accomplis</span>
-      </li>
-      <li *ngIf="userInfo.role == 'USER'" nz-menu-item>
-        <span nz-icon nzType="upload"></span>
-        <span><a routerLink="/userPlateform/assignmentsLeave"></a> Travaux abandonnée</span>
-      </li>
+
+      <ng-container *ngIf="userInfo.role == 'USER'">
+        <li nz-menu-item>
+          <span nz-icon="user" nzType="file"></span>
+          <span> <a routerLink="/userPlateform/time-line">Time line</a> </span>
+        </li>
+        <li nz-menu-item>
+          <span nz-icon="user" nzType="file"></span>
+          <span><a routerLink="/userPlateform/assignments">Travaux disponibles</a></span>
+        </li>
+        <li nz-menu-item>
+          <span nz-icon nzType="bar-chart"></span>
+          <span><a routerLink="/userPlateform/assignmentsInProgress"></a> Travaux en cours</span>
+        </li>
+        <li nz-menu-item>
+          <span nz-icon nzType="video-camera"></span>
+          <span>Travaux accomplis</span>
+        </li>
+        <li nz-menu-item>
+          <span nz-icon nzType="upload"></span>
+          <span><a routerLink="/userPlateform/assignmentsLeave"></a> Travaux abandonnée</span>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="userInfo.role == 'SOCIETY'">
+        <li nz-menu-item>
+          <span nz-icon="user" nzType="file"></span>
+          <span> <a routerLink="/userPlateform/work-management">Gestion des Travaux</a> </span>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="userInfo.role == 'ADMIN'">
+        <li nz-menu-item>
+          <span nz-icon="user" nzType="file"></span>
+          <span> <a routerLink="/userPlateform/processing-society-management">Gestion des societés de traitement</a> </span>
+        </li>
+        <li nz-menu-item>
+          <span nz-icon="user" nzType="file"></span>
+          <span><a routerLink="/userPlateform/point-of-drop-management">Gestion des points de dépôt</a></span>
+        </li>
+        <li nz-menu-item>
+          <span nz-icon nzType="bar-chart"></span>
+          <span><a routerLink="/userPlateform/locality-management">Gestion des localités</a></span>
+        </li>
+        <li nz-menu-item>
+          <span nz-icon nzType="upload"></span>
+          <span><a routerLink="/userPlateform/ranks-management">Gestion des grades</a></span>
+        </li>
+      </ng-container>
+
     </ul>
   </nz-sider>
   <nz-layout class="right-layout">
@@ -29,12 +57,8 @@
       <div class="header-container">
         <div class="row">
           <div class="col-md-10">
-            <span
-            class="trigger"
-            nz-icon
-            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            (click)="isCollapsed = !isCollapsed"
-          ></span>
+            <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+              (click)="isCollapsed = !isCollapsed"></span>
           </div>
           <div class="col-md-2">
             <nz-avatar nzIcon="user" nzSrc="https://avatars.githubusercontent.com/u/121268728?v=4"></nz-avatar>
