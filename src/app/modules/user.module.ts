@@ -18,6 +18,11 @@ import { WorkAvailableComponent } from '../pages/user-pages/work-available/work-
 import { WorkInProgressComponent } from '../pages/user-pages/work-in-progress/work-in-progress.component';
 import { WorkLeaveComponent } from '../pages/user-pages/work-leave/work-leave.component';
 import { WorkSuccessComponent } from '../pages/user-pages/work-success/work-success.component';
+import { LocalityManagementComponent } from '../pages/admin-pages/locality-management/locality-management.component';
+import { PointOfDropManagementComponent } from '../pages/admin-pages/point-of-drop-management/point-of-drop-management.component';
+import { ProcessingSocietyManagementComponent } from '../pages/admin-pages/processing-society-management/processing-society-management.component';
+import { RanksManagementComponent } from '../pages/admin-pages/ranks-management/ranks-management.component';
+import { WorkManagementComponent } from '../pages/society-pages/work-management/work-management.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +33,12 @@ import { WorkSuccessComponent } from '../pages/user-pages/work-success/work-succ
         WorkAvailableComponent,
         WorkInProgressComponent,
         WorkLeaveComponent,
-        WorkSuccessComponent
+        WorkSuccessComponent,
+        LocalityManagementComponent,
+        PointOfDropManagementComponent,
+        ProcessingSocietyManagementComponent,
+        RanksManagementComponent,
+        WorkManagementComponent
     ],
     imports: [
         CommonModule,
