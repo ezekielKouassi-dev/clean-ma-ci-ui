@@ -2,6 +2,10 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { TimeLineComponent } from "../components/time-line/time-line.component";
 import { CommonLayoutComponent } from "../layout/common-layout/common-layout.component";
+import { LocalityManagementComponent } from "../pages/admin-pages/locality-management/locality-management.component";
+import { PointOfDropManagementComponent } from "../pages/admin-pages/point-of-drop-management/point-of-drop-management.component";
+import { ProcessingSocietyManagementComponent } from "../pages/admin-pages/processing-society-management/processing-society-management.component";
+import { RanksManagementComponent } from "../pages/admin-pages/ranks-management/ranks-management.component";
 import { WorkAvailableComponent } from "../pages/user-pages/work-available/work-available.component";
 import { WorkInProgressComponent } from "../pages/user-pages/work-in-progress/work-in-progress.component";
 import { WorkLeaveComponent } from "../pages/user-pages/work-leave/work-leave.component";
@@ -36,6 +40,22 @@ const routes:Routes = [
             {
                 path : 'successAssignments',
                 component : WorkSuccessComponent
+            },
+            {
+                path : 'processing-society-management',
+                component : ProcessingSocietyManagementComponent
+            },
+            {
+                path : 'point-of-drop-management',
+                component : PointOfDropManagementComponent
+            },
+            {
+                path : 'locality-management',
+                component : LocalityManagementComponent
+            },
+            {
+                path : 'ranks-management',
+                component : RanksManagementComponent
             }
         ]
     }
