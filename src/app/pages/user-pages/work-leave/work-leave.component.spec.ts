@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AssignmentsComponent } from './assignments.component';
+import { WorkLeaveComponent } from './work-leave.component';
 
-describe('AssignmentsComponent', () => {
-  let component: AssignmentsComponent;
-  let fixture: ComponentFixture<AssignmentsComponent>;
+describe('WorkLeaveComponent', () => {
+  let component: WorkLeaveComponent;
+  let fixture: ComponentFixture<WorkLeaveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AssignmentsComponent ]
+      declarations: [ WorkLeaveComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AssignmentsComponent);
+    fixture = TestBed.createComponent(WorkLeaveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

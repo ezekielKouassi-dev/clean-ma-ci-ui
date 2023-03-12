@@ -1,11 +1,11 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AssignmentsComponent } from "../components/shared/assignments/assignments.component";
-import { TableAssignmentsInProgressComponent } from "../components/table-assignments-in-progress/table-assignments-in-progress.component";
-import { TableAssignmentsLeaveComponent } from "../components/table-assignments-leave/table-assignments-leave.component";
-import { TableAssignmentsComponent } from "../components/table-assignments/table-assignments.component";
 import { TimeLineComponent } from "../components/time-line/time-line.component";
 import { CommonLayoutComponent } from "../layout/common-layout/common-layout.component";
+import { WorkAvailableComponent } from "../pages/user-pages/work-available/work-available.component";
+import { WorkInProgressComponent } from "../pages/user-pages/work-in-progress/work-in-progress.component";
+import { WorkLeaveComponent } from "../pages/user-pages/work-leave/work-leave.component";
+import { WorkSuccessComponent } from "../pages/user-pages/work-success/work-success.component";
 
 const routes:Routes = [
     {
@@ -19,7 +19,7 @@ const routes:Routes = [
             },
             {
                 path : 'assignments',
-                component : TableAssignmentsComponent
+                component : WorkAvailableComponent
             },
             {
                 path : 'time-line',
@@ -27,11 +27,15 @@ const routes:Routes = [
             },
             {
                 path : 'assignmentsInProgress',
-                component : TableAssignmentsInProgressComponent
+                component : WorkInProgressComponent
             },
             {
                 path : 'assignmentsLeave',
-                component : TableAssignmentsLeaveComponent
+                component : WorkLeaveComponent
+            },
+            {
+                path : 'successAssignments',
+                component : WorkSuccessComponent
             }
         ]
     }

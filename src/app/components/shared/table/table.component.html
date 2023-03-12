@@ -1,0 +1,39 @@
+<div class="table-responsive-md">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th *ngFor="let h of header">{{ h }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of datas | paginate: {itemsPerPage: 1, currentPage: p}">
+                <ng-container *ngIf="type == 'available-work'">
+                    <td>{{ data.assignmentTitle}}</td>
+                    <td>{{ data.assignmentDescription}}</td>
+                    <td>{{ data.numberOfAdherent}}</td>
+                    <td>{{ data.numberOfAcceptation}}</td>
+                    <td>{{ data.reward}}</td>
+                    <td>
+                        <button nz-button nzType="dashed" nzDanger (click)="accept(data)"> <span nz-icon
+                                nzType="check-circle" nzTheme="outline"></span> Accepter</button>
+                    </td>
+                </ng-container>
+                <ng-container *ngIf="type == 'in-progress-work'">
+                    <td>{{ data.assignmentTitle }}</td>
+                    <td>{{ data.assignmentDescription }}</td>
+                    <td><app-badge title="en cours"></app-badge></td>
+                    <td>
+                        <button nz-button nzType="dashed" nzDanger (click)="leave(data)"> <span nz-icon
+                                nzType="check-circle" nzTheme="outline"></span> Abondonné</button>
+                    </td>
+                </ng-container>
+                <ng-container *ngIf="type == 'leave-work'">
+                    <td>{{ data.assignmentTitle }}</td>
+                    <td>{{ data.assignmentDescription }}</td>
+                    <td><app-badge title="abandonné"></app-badge></td>
+                </ng-container>
+            </tr>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </tbody>
+    </table>
+</div>

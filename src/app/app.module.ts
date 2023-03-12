@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
-import { HomeComponent } from './pages/home/home.component';
-import { NavBarComponent } from './components/shared/nav-bar/nav-bar.component';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { fr_FR } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
@@ -31,8 +29,6 @@ registerLocaleData(fr);
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
-    NavBarComponent
   ],
   imports: [
     BrowserModule,

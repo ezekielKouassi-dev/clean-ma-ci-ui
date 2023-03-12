@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SideBarComponent } from './side-bar.component';
+import { WorkAvailableComponent } from './work-available.component';
 
-describe('SideBarComponent', () => {
-  let component: SideBarComponent;
-  let fixture: ComponentFixture<SideBarComponent>;
+describe('WorkAvailableComponent', () => {
+  let component: WorkAvailableComponent;
+  let fixture: ComponentFixture<WorkAvailableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SideBarComponent ]
+      declarations: [ WorkAvailableComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SideBarComponent);
+    fixture = TestBed.createComponent(WorkAvailableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
