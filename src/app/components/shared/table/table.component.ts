@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NzButtonSize } from 'ng-zorro-antd/button';
 import { UserConsumerService } from 'src/app/services/api-consumer/api-user-consumer.service';
 import { NotificationService } from 'src/app/services/functions/notifications.service';
 
@@ -12,6 +13,7 @@ export class TableComponent {
   @Input() datas: any[] = [];
   @Input() buttons: string[] = ['modifier', 'supprimer'];
   @Input() type?: string;
+  size: NzButtonSize = 'large';
 
   p: number = 1;
 

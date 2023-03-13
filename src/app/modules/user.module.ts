@@ -27,6 +27,7 @@ import { RegisterSocietyComponent } from '../components/register-society/registe
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterLocalityComponent } from '../components/register-locality/register-locality.component';
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         ProcessingSocietyManagementComponent,
         RanksManagementComponent,
         WorkManagementComponent,
-        RegisterSocietyComponent
+        RegisterSocietyComponent,
+        RegisterLocalityComponent
     ],
     imports: [
         CommonModule,

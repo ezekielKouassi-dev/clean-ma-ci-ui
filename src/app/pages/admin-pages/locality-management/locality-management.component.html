@@ -3,12 +3,12 @@
     <div class="col-md-10"></div>
     <div class="col-md-2">
         <button nz-button nzType="default" nzDanger>
-            <span nz-icon nzType="plus-circle" nzTheme="outline">Ajouter une localité</span>
+            <span nz-icon nzType="plus-circle" nzTheme="outline" (click)="openModal()">Ajouter une localité</span>
         </button>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <app-table></app-table>
+        <app-table [header]="['name', 'action']" [datas]="data" type="locality-list"></app-table>
     </div>
 </div>

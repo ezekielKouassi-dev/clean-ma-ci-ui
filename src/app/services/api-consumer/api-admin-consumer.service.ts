@@ -1,4 +1,6 @@
 import { Injectable } from "@angular/core";
+import { url_path } from "src/app/constants/constants";
+import { ILocality } from "src/app/interfaces/locality.model";
 import { IProcessingCompany } from "src/app/interfaces/processing-company.model";
 import { AdminService } from "../api/api-admin.service";
 import { StorageService } from "../storage/storage.service";
@@ -13,6 +15,18 @@ export class AdminConsumerService{
 
     registerProcessing(processingCompany: IProcessingCompany) {
         return this.adminService.post({endPoint: `api/v1/processingCompany/admin/${this.getUserId()}`, data: processingCompany});
+    }
+
+    getAllProcessingCompany() {
+        return this.adminService.get(url_path.PROCESSING_COMPANY_LIST);
+    }
+
+    registerLocality(locality: ILocality) {
+        return this.adminService.post({endPoint: `${url_path.REGISTER_LOCALITY}/${this.getUserId()}`, data: locality})
+    }
+
+    getAllLocality() {
+        return this.adminService.get(url_path.LOCALITY_LIST);
     }
 
     private getUserId() {

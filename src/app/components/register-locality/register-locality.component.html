@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+    <div class="form-group mb-3">
+        <input type="text" class="form-control" id="input-1" placeholder="Ajouter une localité" formControlName="name">
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6">
+                <button class="m-2" nz-button nzType="primary" nzDanger (click)="close()">Annuler</button>
+                <button class="m-2" nz-button nzType="default" nzDanger [nzLoading]="isLoading" (click)="createLocality()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+</form>
