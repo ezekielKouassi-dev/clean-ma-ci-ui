@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { url_path } from "src/app/constants/constants";
 import { ILocality } from "src/app/interfaces/locality.model";
+import { IPointOfDrop } from "src/app/interfaces/point-of-drop.model";
 import { IProcessingCompany } from "src/app/interfaces/processing-company.model";
 import { AdminService } from "../api/api-admin.service";
 import { StorageService } from "../storage/storage.service";
@@ -27,6 +28,14 @@ export class AdminConsumerService{
 
     getAllLocality() {
         return this.adminService.get(url_path.LOCALITY_LIST);
+    }
+
+    registerPointOfDrop(pointOfDrop: IPointOfDrop) {
+        return this.adminService.post({endPoint: `${url_path.REGISTER_POINT_OF_DROP}/${this.getUserId()}`, data: pointOfDrop});
+    }
+
+    getAllPointOfDrop() {
+        return this.adminService.get(url_path.POINT_OF_DROP_LIST);
     }
 
     private getUserId() {

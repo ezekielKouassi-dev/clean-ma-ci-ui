@@ -28,6 +28,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterLocalityComponent } from '../components/register-locality/register-locality.component';
+import { RegisterPointOfDropComponent } from '../components/register-point-of-drop/register-point-of-drop.component';
 
 @NgModule({
     declarations: [
@@ -45,7 +46,8 @@ import { RegisterLocalityComponent } from '../components/register-locality/regis
         RanksManagementComponent,
         WorkManagementComponent,
         RegisterSocietyComponent,
-        RegisterLocalityComponent
+        RegisterLocalityComponent,
+        RegisterPointOfDropComponent
     ],
     imports: [
         CommonModule,
