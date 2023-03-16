@@ -1,2 +1,2 @@
 <h1>Liste des travaux en cours</h1>
-<app-table [header]="['Title', 'Description', 'State', 'Action']" type="in-progress-work" [datas]="data"></app-table>
+<app-table [header]="['Title', 'Description', 'State', 'Action']" type="in-progress-work" [datas]="data" (event)="loadPage($event)"></app-table>

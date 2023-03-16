@@ -12,14 +12,22 @@ export class WorkInProgressComponent implements OnInit{
   constructor(private userConsumer : UserConsumerService) {}
 
   ngOnInit(): void {
-    this.userConsumer.getListOfUserAssignments('in progress').subscribe({
-      next: (response : any) => {
-        console.log(response);
-        this.data = response.data;
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
+    this.loadPage();
+  }
+
+  loadPage(status: boolean = true) {
+
+    if(status) {
+      this.userConsumer.getListOfUserAssignments('in progress').subscribe({
+        next: (response : any) => {
+          console.log(response);
+          this.data = response.data;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+    }
+    
   }
 }
