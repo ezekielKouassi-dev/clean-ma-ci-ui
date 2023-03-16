@@ -1,0 +1,21 @@
+<nz-card class="m-2" nzHoverable style="width:240px" [nzCover]="coverTemplate"
+    [nzActions]="[actionEdit, actionEllipsis]">
+    <nz-card-meta [nzTitle]="data.assignmentTitle" [nzDescription]="data.assignmentDescription"></nz-card-meta>
+</nz-card>
+<ng-template #coverTemplate>
+    <img alt="example" src="https://www.portabidjan.ci/sites/default/files/actualite/fq6a9721_copie.jpg" />
+</ng-template>
+<ng-template #actionSetting>
+    <span nz-icon nzType="setting"></span>
+
+</ng-template>
+<ng-template #actionEdit>
+    <button nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle" (click)="accept(data)">
+        <span nz-icon nzType="clear" nzTheme="outline"></span>
+    </button>
+</ng-template>
+<ng-template #actionEllipsis>
+    <button nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle">
+        <span nz-icon nzType="ellipsis"></span>
+    </button>
+</ng-template>

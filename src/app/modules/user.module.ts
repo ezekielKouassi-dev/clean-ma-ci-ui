@@ -29,6 +29,8 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterLocalityComponent } from '../components/register-locality/register-locality.component';
 import { RegisterPointOfDropComponent } from '../components/register-point-of-drop/register-point-of-drop.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { AssignmentComponent } from '../components/shared/assignment/assignment.component';
 
 @NgModule({
     declarations: [
@@ -47,7 +49,8 @@ import { RegisterPointOfDropComponent } from '../components/register-point-of-dr
         WorkManagementComponent,
         RegisterSocietyComponent,
         RegisterLocalityComponent,
-        RegisterPointOfDropComponent
+        RegisterPointOfDropComponent,
+        AssignmentComponent
     ],
     imports: [
         CommonModule,
@@ -62,7 +65,8 @@ import { RegisterPointOfDropComponent } from '../components/register-point-of-dr
         NzIconModule,
         NzAvatarModule,
         NgxPaginationModule,
-        NzFormModule
+        NzFormModule,
+        NzCardModule
     ],
     exports: [
         CommonLayoutComponent, 

@@ -13,6 +13,10 @@ export class WorkAvailableComponent implements OnInit{
   constructor(private userConsumer : UserConsumerService) { }
 
   ngOnInit(): void {
+    this.sender();
+  }
+
+  sender() {
     this.userConsumer.getListOfAssignment().subscribe({
       next: (response: any) => {
         console.log(response)
@@ -23,6 +27,12 @@ export class WorkAvailableComponent implements OnInit{
         console.log(err);
       }
     });
+  }
+
+  reloadPage(status: boolean) {
+    if(status){
+      this.sender();
+    } 
   }
 
 }

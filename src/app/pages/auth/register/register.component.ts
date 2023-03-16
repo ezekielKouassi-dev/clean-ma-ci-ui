@@ -41,6 +41,7 @@ export class RegisterComponent implements OnInit {
   }
 
   sender() {
+    this.registerForm.value['roleId'] = 1;
     this.httpService.register(this.registerForm.value).subscribe({
       next: (response: any) => {
         if (response.status == 200) {

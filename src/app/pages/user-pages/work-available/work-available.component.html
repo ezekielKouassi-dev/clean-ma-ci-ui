@@ -1,3 +1,7 @@
 <h1>Liste des travaux disponible</h1>
-<app-table [header]="['Title', 'Description', 'Number Of Adherent', 'Number Of Acceptation', 'Reward', 'Action']"
-type="available-work" [datas]="data"></app-table>
+<!-- <app-table [header]="['Title', 'Description', 'Number Of Adherent', 'Number Of Acceptation', 'Reward', 'Action']"
+type="available-work" [datas]="data"></app-table> -->
+
+<div class="work-container mx-auto">
+    <app-assignment *ngFor="let elem of data" [data]="elem" (event)="reloadPage($event)"></app-assignment>
+</div>
