@@ -12,11 +12,14 @@ export class AssignmentComponent implements OnInit{
   @Input() data : any
   @Output() event = new EventEmitter<boolean>();
   size: NzButtonSize = 'large';
+  loading : boolean = true;
 
   constructor(private userConsumer: UserConsumerService, private notification: NotificationService) {}
   
   ngOnInit(): void {
-    
+    setTimeout(()=>{
+      this.loading = false;
+    }, 1000)
   }
 
   accept(data: any) {

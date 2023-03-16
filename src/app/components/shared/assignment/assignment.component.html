@@ -1,5 +1,5 @@
 <nz-card class="m-2" nzHoverable style="width:240px" [nzCover]="coverTemplate"
-    [nzActions]="[actionEdit, actionEllipsis]">
+    [nzActions]="[actionEdit, actionEllipsis]" [nzLoading]="loading">
     <nz-card-meta [nzTitle]="data.assignmentTitle" [nzDescription]="data.assignmentDescription"></nz-card-meta>
 </nz-card>
 <ng-template #coverTemplate>

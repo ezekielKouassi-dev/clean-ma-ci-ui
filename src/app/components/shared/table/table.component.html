@@ -1,4 +1,4 @@
-<div class="table-responsive-md">
+<!-- <div class="table-responsive-md">
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -38,27 +38,103 @@
                     <td>{{ data.phone }}</td>
                     <td>{{ data.username }}</td>
                     <td>
-                        <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span nz-icon nzType="plus" nzTheme="outline"></span></button>
-                        <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
+                        <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span
+                                nz-icon nzType="plus" nzTheme="outline"></span></button>
+                        <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon
+                                nzType="delete" nzTheme="outline"></span></button>
                     </td>
                 </ng-container>
                 <ng-container *ngIf="type == 'locality-list'">
                     <td>{{data.name}}</td>
                     <td>
-                        <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span nz-icon nzType="plus" nzTheme="outline"></span></button>
-                        <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
+                        <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span
+                                nz-icon nzType="plus" nzTheme="outline"></span></button>
+                        <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon
+                                nzType="delete" nzTheme="outline"></span></button>
                     </td>
                 </ng-container>
                 <ng-container *ngIf="type == 'point-of-drop-list'">
                     <td>{{data.name}}</td>
                     <td>{{data.locality}}</td>
                     <td>
-                        <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span nz-icon nzType="plus" nzTheme="outline"></span></button>
-                        <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
+                        <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span
+                                nz-icon nzType="plus" nzTheme="outline"></span></button>
+                        <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon
+                                nzType="delete" nzTheme="outline"></span></button>
                     </td>
                 </ng-container>
             </tr>
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </tbody>
     </table>
-</div>
+</div> -->
+
+<nz-table #sortTable [nzData]="datas" nzTableLayout="fixed">
+    <thead>
+        <tr>
+            <th *ngFor="let column of header">
+                {{ column }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of sortTable.data">
+            <ng-container *ngIf="type == 'available-work'">
+                <td>{{ data.assignmentTitle}}</td>
+                <td>{{ data.assignmentDescription}}</td>
+                <td>{{ data.numberOfAdherent}}</td>
+                <td>{{ data.numberOfAcceptation}}</td>
+                <td>{{ data.reward}}</td>
+                <td>
+                    <button nz-button nzType="dashed" nzDanger (click)="accept(data)"> <span nz-icon
+                            nzType="check-circle" nzTheme="outline"></span> Accepter</button>
+                </td>
+            </ng-container>
+            <ng-container *ngIf="type == 'in-progress-work'">
+                <td>{{ data.assignmentTitle }}</td>
+                <td>{{ data.assignmentDescription }}</td>
+                <td><app-badge title="en cours"></app-badge></td>
+                <td>
+                    <button nz-button nzType="dashed" nzDanger (click)="leave(data)"> <span nz-icon
+                            nzType="check-circle" nzTheme="outline"></span> Abondonné</button>
+                </td>
+            </ng-container>
+            <ng-container *ngIf="type == 'leave-work'">
+                <td>{{ data.assignmentTitle }}</td>
+                <td>{{ data.assignmentDescription }}</td>
+                <td><app-badge title="abandonné"></app-badge></td>
+            </ng-container>
+            <ng-container *ngIf="type == 'processing-company-list'">
+                <td>{{ data.name }}</td>
+                <td>{{ data.email }}</td>
+                <td>{{ data.phone }}</td>
+                <td>{{ data.username }}</td>
+                <td>
+                    <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span
+                            nz-icon nzType="plus" nzTheme="outline"></span></button>
+                    <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon
+                            nzType="delete" nzTheme="outline"></span></button>
+                </td>
+            </ng-container>
+            <ng-container *ngIf="type == 'locality-list'">
+                <td>{{data.name}}</td>
+                <td>
+                    <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span
+                            nz-icon nzType="plus" nzTheme="outline"></span></button>
+                    <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon
+                            nzType="delete" nzTheme="outline"></span></button>
+                </td>
+            </ng-container>
+            <ng-container *ngIf="type == 'point-of-drop-list'">
+                <td>{{data.name}}</td>
+                <td>{{data.locality}}</td>
+                <td>
+                    <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span
+                            nz-icon nzType="plus" nzTheme="outline"></span></button>
+                    <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon
+                            nzType="delete" nzTheme="outline"></span></button>
+                </td>
+            </ng-container>
+        </tr>
+    </tbody>
+</nz-table>
