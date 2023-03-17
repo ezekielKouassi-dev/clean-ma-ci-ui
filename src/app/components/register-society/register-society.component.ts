@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { AdminConsumerService } from 'src/app/services/api-consumer/api-admin-consumer.service';
 import { NotificationService } from 'src/app/services/functions/notifications.service';
+import { ReloadService } from 'src/app/services/observable/reload.service';
 
 @Component({
   selector: 'app-register-society',
@@ -18,7 +19,8 @@ export class RegisterSocietyComponent implements OnInit {
     private fb: FormBuilder,
     private notification: NotificationService,
     private modalRef: NzModalRef,
-    private adminConsumer: AdminConsumerService
+    private adminConsumer: AdminConsumerService,
+    private reload: ReloadService
   ) { }
 
   ngOnInit(): void {
@@ -40,7 +42,8 @@ export class RegisterSocietyComponent implements OnInit {
           console.log(response);
           if(response.status) {
             this.notification.createNotification('success', 'Enregistrement réussie', 'Société de traitement sauvegarder');
-            setTimeout(()=>{this.close()}, 3000)
+            setTimeout(()=>{this.close()}, 1000)
+            this.reload.emit(true);
           }else {
             this.notification.createNotification('error', 'ERRROR', response.message);
           }

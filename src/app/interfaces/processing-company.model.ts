@@ -4,5 +4,6 @@ export interface IProcessingCompany {
     email: string,
     phone: string,
     username: string,
-    password: string
+    password: string,
+    adminId: number
 }

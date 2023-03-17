@@ -14,16 +14,19 @@ export class AdminConsumerService{
 
     constructor(private storage: StorageService, private adminService: AdminService) {}
 
-    registerProcessing(processingCompany: IProcessingCompany) {
-        return this.adminService.post({endPoint: `api/v1/processingCompany/admin/${this.getUserId()}`, data: processingCompany});
+    registerProcessing(processingCompany: any) {
+        processingCompany['adminId'] = this.getUserId();
+        console.log(processingCompany['adminId']);
+        return this.adminService.post({endPoint: `api/v1/processingCompany`, data: processingCompany});
     }
 
     getAllProcessingCompany() {
         return this.adminService.get(url_path.PROCESSING_COMPANY_LIST);
     }
 
-    registerLocality(locality: ILocality) {
-        return this.adminService.post({endPoint: `${url_path.REGISTER_LOCALITY}/${this.getUserId()}`, data: locality})
+    registerLocality(locality: any) {
+        locality['adminId'] = this.getUserId();
+        return this.adminService.post({endPoint: `${url_path.REGISTER_LOCALITY}`, data: locality})
     }
 
     getAllLocality() {
