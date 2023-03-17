@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { AdminConsumerService } from 'src/app/services/api-consumer/api-admin-consumer.service';
 import { NotificationService } from 'src/app/services/functions/notifications.service';
+import { ReloadService } from 'src/app/services/observable/reload.service';
 
 @Component({
   selector: 'app-register-locality',
@@ -17,7 +18,8 @@ export class RegisterLocalityComponent implements OnInit {
     private fb: FormBuilder,
     private modalRef: NzModalRef,
     private adminConsumer: AdminConsumerService,
-    private notification: NotificationService
+    private notification: NotificationService,
+    private reload: ReloadService
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +37,8 @@ export class RegisterLocalityComponent implements OnInit {
           console.log(response);
           if (response.status == 200) {
             this.notification.createNotification('success', 'Enregistrement réussi', 'Localité enregistré');
-            setTimeout(() => { this.close() }, 3000);
+            setTimeout(() => { this.close() }, 1000);
+            this.reload.emit(true);
           }
         }
       })
