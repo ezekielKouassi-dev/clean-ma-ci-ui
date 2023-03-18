@@ -15,7 +15,10 @@ export class TableComponent {
   @Input() buttons: string[] = ['modifier', 'supprimer'];
   @Input() type?: string;
   @Output() event = new EventEmitter<boolean>();
+  dtOptions: any = {};
   size: NzButtonSize = 'large';
+  pageSize = 5
+  pageIndex = 1
   confirmModal!: NzModalRef;
 
   p: number = 1;
@@ -27,7 +30,15 @@ export class TableComponent {
   ) { }
 
   ngOnInit(): void {
-
+    // setTimeout(()=>{                          
+    //   $('#table').DataTable( {
+    //     pagingType: 'full_numbers',
+    //     pageLength: 5,
+    //     processing: true,
+    //     lengthMenu : [5, 10, 25],
+    //     order:[[1,"desc"]]
+    // } );
+    // }, 1);
   }
 
   accept(data: any) {

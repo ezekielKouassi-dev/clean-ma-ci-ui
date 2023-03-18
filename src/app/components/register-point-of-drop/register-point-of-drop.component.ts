@@ -4,6 +4,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { ILocality } from 'src/app/interfaces/locality.model';
 import { IPointOfDrop } from 'src/app/interfaces/point-of-drop.model';
 import { AdminConsumerService } from 'src/app/services/api-consumer/api-admin-consumer.service';
+import { ReloadService } from 'src/app/services/observable/reload.service';
 
 @Component({
   selector: 'app-register-point-of-drop',
@@ -20,7 +21,8 @@ export class RegisterPointOfDropComponent implements OnInit {
   constructor(
     private adminConsumer: AdminConsumerService,
     private fb: FormBuilder,
-    private modalRef: NzModalRef
+    private modalRef: NzModalRef,
+    private reload: ReloadService
   ) { }
 
   ngOnInit(): void {
@@ -43,7 +45,8 @@ export class RegisterPointOfDropComponent implements OnInit {
       this.adminConsumer.registerPointOfDrop(this.form.value).subscribe({
         next: (response) => {
           console.log(response);
-          setTimeout(()=>{this.close()}, 3000);
+          setTimeout(()=>{this.close()}, 1000);
+          this.reload.emit(true)
         },
         error: (err) => {
           console.log(err);

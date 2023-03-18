@@ -31,6 +31,7 @@ import { RegisterLocalityComponent } from '../components/register-locality/regis
 import { RegisterPointOfDropComponent } from '../components/register-point-of-drop/register-point-of-drop.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { AssignmentComponent } from '../components/shared/assignment/assignment.component';
+import { RegisterAssignmentComponent } from '../components/register-assignment/register-assignment.component';
 
 @NgModule({
     declarations: [
@@ -50,6 +51,7 @@ import { AssignmentComponent } from '../components/shared/assignment/assignment.
         RegisterSocietyComponent,
         RegisterLocalityComponent,
         RegisterPointOfDropComponent,
+        RegisterAssignmentComponent,
         AssignmentComponent
     ],
     imports: [

@@ -6,6 +6,7 @@ import { LocalityManagementComponent } from "../pages/admin-pages/locality-manag
 import { PointOfDropManagementComponent } from "../pages/admin-pages/point-of-drop-management/point-of-drop-management.component";
 import { ProcessingSocietyManagementComponent } from "../pages/admin-pages/processing-society-management/processing-society-management.component";
 import { RanksManagementComponent } from "../pages/admin-pages/ranks-management/ranks-management.component";
+import { WorkManagementComponent } from "../pages/society-pages/work-management/work-management.component";
 import { WorkAvailableComponent } from "../pages/user-pages/work-available/work-available.component";
 import { WorkInProgressComponent } from "../pages/user-pages/work-in-progress/work-in-progress.component";
 import { WorkLeaveComponent } from "../pages/user-pages/work-leave/work-leave.component";
@@ -56,6 +57,10 @@ const routes:Routes = [
             {
                 path : 'ranks-management',
                 component : RanksManagementComponent
+            },
+            {
+                path: 'work-management',
+                component: WorkManagementComponent
             }
         ]
     }

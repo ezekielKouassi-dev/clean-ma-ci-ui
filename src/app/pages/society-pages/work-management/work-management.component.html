@@ -1,1 +1,15 @@
-<p>work-management works!</p>
+<h1>Gestion des Travaux</h1>
+<div class="row">
+    <div class="col-md-10"></div>
+    <div class="col-md-2">
+        <button nz-button nzType="default" nzDanger>
+            <span nz-icon nzType="plus-circle" nzTheme="outline" (click)="openModal()">Ajouter une localité</span>
+        </button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <app-table [datas]="data" [header]="['title', 'description', 'numberOfAdherent', 'numberOfAcceptation', 'pointOfDrop', 'reward', 'duration', 'action']"
+        type="society-assignment-list"></app-table>
+    </div>
+</div>

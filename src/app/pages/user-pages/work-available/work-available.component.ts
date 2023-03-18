@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserConsumerService } from 'src/app/services/api-consumer/api-user-consumer.service';
+import { ReloadService } from 'src/app/services/observable/reload.service';
 
 @Component({
   selector: 'app-work-available',
@@ -10,10 +11,13 @@ export class WorkAvailableComponent implements OnInit{
 
   data: any;
 
-  constructor(private userConsumer : UserConsumerService) { }
+  constructor(private userConsumer : UserConsumerService, private reload: ReloadService) { }
 
   ngOnInit(): void {
     this.sender();
+    this.reload.assignmentRegister$.subscribe((response)=>{
+      if(response) this.sender()
+    })
   }
 
   sender() {

@@ -1,5 +1,5 @@
 <!-- <div class="table-responsive-md">
-    <table class="table table-bordered">
+    <table id="table" class="table table-bordered">
         <thead>
             <tr>
                 <th *ngFor="let h of header">{{ h }}</th>
@@ -63,13 +63,28 @@
                                 nzType="delete" nzTheme="outline"></span></button>
                     </td>
                 </ng-container>
+                <ng-container *ngIf="type == 'society-assignment-list'">
+                    <td>{{ data.title }}</td>
+                    <td>{{ data.description }}</td>
+                    <td>{{ data.numberOfAdherent }}</td>
+                    <td>{{ data.numberOfAcceptation }}</td>
+                    <td>{{ data.pointOfDrop}}</td>
+                    <td>{{ data.reward }}</td>
+                    <td>{{ data.duration }}</td>
+                    <td>
+                        <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span
+                                nz-icon nzType="plus" nzTheme="outline"></span></button>
+                        <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon
+                                nzType="delete" nzTheme="outline"></span></button>
+                    </td>
+                </ng-container>
             </tr>
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </tbody>
     </table>
 </div> -->
 
-<nz-table #sortTable [nzData]="datas" nzTableLayout="fixed">
+<nz-table #sortTable [nzData]="datas" nzTableLayout="fixed" [(nzPageSize)]="pageSize" [(nzPageIndex)]="pageIndex">
     <thead>
         <tr>
             <th *ngFor="let column of header">
@@ -133,6 +148,21 @@
                             nz-icon nzType="plus" nzTheme="outline"></span></button>
                     <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon
                             nzType="delete" nzTheme="outline"></span></button>
+                </td>
+            </ng-container>
+            <ng-container *ngIf="type == 'society-assignment-list'">
+                <td>{{ data.title }}</td>
+                <td>{{ data.description }}</td>
+                <td>{{ data.numberOfAdherent }}</td>
+                <td>{{ data.numberOfAcceptation }}</td>
+                <td>{{ data.pointOfDrop}}</td>
+                <td>{{ data.reward }}</td>
+                <td>{{ data.duration }}</td>
+                <td>
+                    <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span
+                        nz-icon nzType="plus" nzTheme="outline"></span></button>
+                <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon
+                        nzType="delete" nzTheme="outline"></span></button>
                 </td>
             </ng-container>
         </tr>
