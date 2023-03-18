@@ -7,23 +7,23 @@
 
       <ng-container *ngIf="userInfo.role == 'USER'">
         <li nz-menu-item>
-          <i class="fa-solid fa-timeline-arrow"></i>
-          <span> <a routerLink="/userPlateform/time-line">Time line</a> </span>
+          <span nz-icon nzType="ordered-list" nzTheme="outline"></span>
+          <span><a routerLink="/userPlateform/time-line">Time line</a> </span>
         </li>
         <li nz-menu-item>
-          <span nz-icon="user" nzType="file"></span>
+          <span nz-icon nzType="database" nzTheme="outline"></span>
           <span><a routerLink="/userPlateform/assignments">Travaux disponibles</a></span>
         </li>
         <li nz-menu-item>
-          <span nz-icon nzType="bar-chart"></span>
+          <span nz-icon [nzType]="'sync'" [nzSpin]="true"></span>
           <span><a routerLink="/userPlateform/assignmentsInProgress"></a> Travaux en cours</span>
         </li>
         <li nz-menu-item>
-          <span nz-icon nzType="video-camera"></span>
+          <span nz-icon [nzType]="'check-circle'" [nzTheme]="'twotone'" [nzTwotoneColor]="'#52c41a'"></span>
           <span><a routerLink="/userPlateform/successAssignments">Travaux accomplis</a></span>
         </li>
         <li nz-menu-item>
-          <span nz-icon nzType="upload"></span>
+          <span nz-icon nzType="close-circle" nzTheme="outline"></span>
           <span><a routerLink="/userPlateform/assignmentsLeave"></a> Travaux abandonnée</span>
         </li>
       </ng-container>
