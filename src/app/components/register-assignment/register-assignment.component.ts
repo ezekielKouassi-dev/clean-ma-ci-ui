@@ -57,6 +57,7 @@ export class RegisterAssignmentComponent implements OnInit {
           if (response.status == 200) {
             this.notification.createNotification('success', 'Succès', 'Mission enregistrer avec succès');
             setTimeout(() => { this.close() }, 1000);
+            this.reload.emit(true);
           } else {
             this.notification.createNotification('error', 'ERRORRR', 'ERRRORRRR')
           }

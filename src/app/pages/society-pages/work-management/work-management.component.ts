@@ -20,7 +20,7 @@ export class WorkManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTable();
-    this.reload.assignmentRegister$.subscribe((response)=>{
+    this.reload.isClicked$.subscribe((response)=>{
       if(response) this.loadTable()
     })
   }
