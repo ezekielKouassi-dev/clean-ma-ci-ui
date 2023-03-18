@@ -1,11 +1,13 @@
 <nz-layout class="layout">
-  <nz-sider nzTheme="light">
-    <div class="logo"></div>
+  <nz-sider>
+    <div class="logo text-center">
+      <img src="../../../assets/logo.png" alt="logo" srcset="" width="60" height="50">
+    </div>
     <ul class="gradient-ohhappiness" nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
 
       <ng-container *ngIf="userInfo.role == 'USER'">
         <li nz-menu-item>
-          <span nz-icon="user" nzType="file"></span>
+          <i class="fa-solid fa-timeline-arrow"></i>
           <span> <a routerLink="/userPlateform/time-line">Time line</a> </span>
         </li>
         <li nz-menu-item>
@@ -27,7 +29,11 @@
       </ng-container>
       <ng-container *ngIf="userInfo.role == 'SOCIETY'">
         <li nz-menu-item>
-          <span nz-icon="user" nzType="file"></span>
+          <span nz-icon nzType="dashboard" nzTheme="outline"></span>
+          <span> <a routerLink="/userPlateform/dashboard">Dashboard</a> </span>
+        </li>
+        <li nz-menu-item>
+          <span nz-icon nzType="database" nzTheme="outline"></span>
           <span> <a routerLink="/userPlateform/work-management">Gestion des Travaux</a> </span>
         </li>
       </ng-container>
@@ -56,11 +62,11 @@
     <nz-header>
       <div class="header-container">
         <div class="row">
-          <div class="col-md-10">
-            <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-              (click)="isCollapsed = !isCollapsed"></span>
+          <div class="col-md-9">
+            <!-- <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+              (click)="isCollapsed = !isCollapsed"></span> -->
           </div>
-          <div class="col-md-2">
+          <div class="col-md-3">
             <nz-avatar nzIcon="user" nzSrc="https://avatars.githubusercontent.com/u/121268728?v=4"></nz-avatar>
             Ezekiel Kouassi
           </div>

@@ -32,6 +32,9 @@ import { RegisterPointOfDropComponent } from '../components/register-point-of-dr
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { AssignmentComponent } from '../components/shared/assignment/assignment.component';
 import { RegisterAssignmentComponent } from '../components/register-assignment/register-assignment.component';
+import { DashboardManagerComponent } from '../pages/society-pages/dashboard-manager/dashboard-manager.component';
+import { CardDashboardComponent } from '../components/card-dashboard/card-dashboard.component';
+import { BarChartComponent } from '../components/bar-chart/bar-chart.component';
 
 @NgModule({
     declarations: [
@@ -52,7 +55,10 @@ import { RegisterAssignmentComponent } from '../components/register-assignment/r
         RegisterLocalityComponent,
         RegisterPointOfDropComponent,
         RegisterAssignmentComponent,
-        AssignmentComponent
+        AssignmentComponent,
+        DashboardManagerComponent,
+        CardDashboardComponent,
+        BarChartComponent
     ],
     imports: [
         CommonModule,
@@ -68,7 +74,8 @@ import { RegisterAssignmentComponent } from '../components/register-assignment/r
         NzAvatarModule,
         NgxPaginationModule,
         NzFormModule,
-        NzCardModule
+        NzCardModule,
+        
     ],
     exports: [
         CommonLayoutComponent, 
