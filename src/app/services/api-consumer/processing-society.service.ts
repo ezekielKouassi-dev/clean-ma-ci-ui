@@ -22,6 +22,10 @@ export class societyService{
         return this.apiUser.get(`${url_path.GET_ASSIGNMENT_BY_PROCESSING_COMPANY}/${this.getUserId()}/assignments`)
     }
 
+    validateAssignment(assignmentId: number) {
+        return this.apiUser.patch({endPoint: `${url_path.REGISTER_ASSIGNMENT}/${assignmentId}`, data: null})
+    }
+
     private getUserId() {
         const userInfoString = this.storage.get('userInfo');
         if(userInfoString != null) {

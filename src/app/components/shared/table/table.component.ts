@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NzButtonSize } from 'ng-zorro-antd/button';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 import { UserConsumerService } from 'src/app/services/api-consumer/api-user-consumer.service';
+import { societyService } from 'src/app/services/api-consumer/processing-society.service';
 import { NotificationService } from 'src/app/services/functions/notifications.service';
 
 @Component({
@@ -25,6 +26,7 @@ export class TableComponent {
 
   constructor(
     private userConsumer: UserConsumerService,
+    private societyService: societyService,
     private notification: NotificationService,
     private modal: NzModalService
   ) { }
@@ -86,5 +88,22 @@ export class TableComponent {
 
   reloadPage() {
     this.event.emit(true);
+  }
+
+  validateAssignment(id: number) {
+    this.societyService.validateAssignment(id).subscribe({
+      next: (response: any)=>{
+        console.log(response);
+        if(response.status == 200) {
+          this.notification.createNotification('success', 'Mission validé', 'Super vous une de vos missions à été accomplis par la population');
+        }else {
+          this.notification.createNotification('error', 'Echec lors de la valdation', response.message);
+        }
+      },
+      error: (err)=>{
+        console.log(err);
+        this.notification.createNotification('error', 'ERRRRORRR', err);
+      }
+    })
   }
 }

@@ -8,5 +8,6 @@ export const url_path = {
     POINT_OF_DROP_LIST: 'api/v1/pointOfDrop',
     REGISTER_POINT_OF_DROP: 'api/v1/pointOfDrop/admin',
     REGISTER_ASSIGNMENT: 'api/v1/assignments',
-    GET_ASSIGNMENT_BY_PROCESSING_COMPANY: 'api/v1/processingCompany'
+    GET_ASSIGNMENT_BY_PROCESSING_COMPANY: 'api/v1/processingCompany',
+    //VALIDATE_ASSIGNMENT: 'api/assignments/'
 }
