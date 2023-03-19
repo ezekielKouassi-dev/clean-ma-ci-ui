@@ -119,6 +119,11 @@
                 <td>{{ data.assignmentDescription }}</td>
                 <td><app-badge title="abandonné"></app-badge></td>
             </ng-container>
+            <ng-container *ngIf="type == 'success-work'">
+                <td>{{ data.assignmentTitle }}</td>
+                <td>{{ data.assignmentDescription }}</td>
+                <td><app-badge title="réussie"></app-badge></td>
+            </ng-container>
             <ng-container *ngIf="type == 'processing-company-list'">
                 <td>{{ data.name }}</td>
                 <td>{{ data.email }}</td>
@@ -159,7 +164,7 @@
                 <td>{{ data.reward }}</td>
                 <td>{{ data.duration }}</td>
                 <td>
-                    <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle"><span
+                    <button class="m-1" nz-button nzType="primary" nzDanger [nzSize]="size" nzShape="circle" [disabled]="data.isCompleted"><span
                             nz-icon nzType="check" nzTheme="outline" (click)="validateAssignment(data.id)"></span></button>
                     <button class="m-1" nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon
                             nzType="delete" nzTheme="outline"></span></button>
