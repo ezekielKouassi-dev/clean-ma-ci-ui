@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NzButtonSize } from 'ng-zorro-antd/button';
 import { StorageService } from 'src/app/services/storage/storage.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class CommonLayoutComponent implements OnInit {
   
   isCollapsed = false;
   userInfo: any;
+  size: NzButtonSize = 'small';
 
   constructor(private storage: StorageService) { }
 
