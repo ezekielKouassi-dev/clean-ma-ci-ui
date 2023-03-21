@@ -18,7 +18,7 @@ export class WorkInProgressComponent implements OnInit{
   loadPage(status: boolean = true) {
 
     if(status) {
-      this.userConsumer.getListOfUserAssignments('in progress').subscribe({
+      this.userConsumer.getListOfUserAssignments('progress').subscribe({
         next: (response : any) => {
           console.log(response);
           this.data = response.data;

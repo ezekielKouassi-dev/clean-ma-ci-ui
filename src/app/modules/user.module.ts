@@ -35,6 +35,7 @@ import { RegisterAssignmentComponent } from '../components/register-assignment/r
 import { DashboardManagerComponent } from '../pages/society-pages/dashboard-manager/dashboard-manager.component';
 import { CardDashboardComponent } from '../components/card-dashboard/card-dashboard.component';
 import { BarChartComponent } from '../components/bar-chart/bar-chart.component';
+import { StatsComponent } from '../components/shared/stats/stats.component';
 
 @NgModule({
     declarations: [
@@ -58,7 +59,8 @@ import { BarChartComponent } from '../components/bar-chart/bar-chart.component';
         AssignmentComponent,
         DashboardManagerComponent,
         CardDashboardComponent,
-        BarChartComponent
+        BarChartComponent,
+        StatsComponent
     ],
     imports: [
         CommonModule,
