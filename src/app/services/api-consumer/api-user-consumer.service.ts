@@ -29,6 +29,10 @@ export class UserConsumerService {
         return this.userService.patch({endPoint:`api/v1/users/${this.getUserId()}/assignments/${assignmentId}`, data: null});
     }
 
+    getStats() {
+        return this.userService.get(`api/v1/assignmentUser/${this.getUserId()}/statistics`);
+    }
+
 
 
     // TODO: exportr this function in a separed file

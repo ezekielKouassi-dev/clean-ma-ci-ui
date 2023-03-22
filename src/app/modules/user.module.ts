@@ -36,6 +36,7 @@ import { DashboardManagerComponent } from '../pages/society-pages/dashboard-mana
 import { CardDashboardComponent } from '../components/card-dashboard/card-dashboard.component';
 import { BarChartComponent } from '../components/bar-chart/bar-chart.component';
 import { StatsComponent } from '../components/shared/stats/stats.component';
+import { StatisticsComponent } from '../pages/user-pages/statistics/statistics.component';
 
 @NgModule({
     declarations: [
@@ -60,7 +61,8 @@ import { StatsComponent } from '../components/shared/stats/stats.component';
         DashboardManagerComponent,
         CardDashboardComponent,
         BarChartComponent,
-        StatsComponent
+        StatsComponent,
+        StatisticsComponent
     ],
     imports: [
         CommonModule,

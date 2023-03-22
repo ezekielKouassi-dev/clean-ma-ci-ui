@@ -26,6 +26,10 @@
           <span nz-icon nzType="close-circle" nzTheme="outline"></span>
           <span><a routerLink="/userPlateform/assignmentsLeave"></a> Travaux abandonnée</span>
         </li>
+        <li nz-menu-item>
+          <span nz-icon nzType="pie-chart" nzTheme="outline"></span>
+          <span><a routerLink="/userPlateform/stats">Mes statistiques</a> </span>
+        </li>
       </ng-container>
       <ng-container *ngIf="userInfo.role == 'SOCIETY'">
         <li nz-menu-item>
@@ -72,7 +76,7 @@
           </div>
           <div class="col-md-1">
             <button class="m-1" nz-button nzType="text" nzDanger [nzSize]="size" nzShape="circle">
-              <span nz-icon nzType="logout" nzTheme="outline"></span>
+              <a routerLink="/login"><span nz-icon nzType="logout" nzTheme="outline"></span></a>
             </button>
           </div>
         </div>
